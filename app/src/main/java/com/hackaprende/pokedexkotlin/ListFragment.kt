@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,7 +19,60 @@ class ListFragment : Fragment() {
 
         val recycler = view.findViewById<RecyclerView>(R.id.pokemon_recycler)
         recycler.layoutManager = LinearLayoutManager(requireActivity())
-        
+        val adapter = PokemonAdapter()
+        recycler.adapter = adapter
+
+        adapter.onItemClickListener = {
+            Toast.makeText(requireActivity(), it.name, Toast.LENGTH_SHORT).show()
+        }
+
+        val pokemonList = mutableListOf(
+            Pokemon(1, "Bulbasaur", 45, 49,
+                49, 45, Pokemon.PokemonType.GRASS
+            ),
+            Pokemon(
+                2, "Ivysaur", 60, 62,
+                63, 60,  Pokemon.PokemonType.GRASS
+            ),
+            Pokemon(
+                3, "Venuasaur", 80, 82,
+                83, 80, Pokemon.PokemonType.GRASS
+            ),
+            Pokemon(
+                4, "Charmander", 39, 52,
+                43, 65, Pokemon.PokemonType.FIRE
+            ),
+            Pokemon(
+                5, "Charmeleon", 58, 64,
+                58, 80, Pokemon.PokemonType.FIRE
+            ),
+            Pokemon(
+                6, "Charizzard", 78, 84,
+                78, 100, Pokemon.PokemonType.FIRE
+            ),
+            Pokemon(
+                7, "Squirtle", 44, 48,
+                65, 43, Pokemon.PokemonType.WATER
+            ),
+            Pokemon(
+                8, "Wartortle", 59, 63,
+                80, 58, Pokemon.PokemonType.WATER
+            ),
+            Pokemon(
+                9, "Blastoise", 79, 83,
+                100, 78, Pokemon.PokemonType.WATER
+            ),
+            Pokemon(
+                25, "Pikachu", 35, 55,
+                40, 90, Pokemon.PokemonType.ELECTRIC
+            ),
+            Pokemon(
+                26, "Raichu", 60, 90,
+                55, 110, Pokemon.PokemonType.ELECTRIC
+            ),
+        )
+
+        adapter.submitList(pokemonList)
 
         return view
     }
