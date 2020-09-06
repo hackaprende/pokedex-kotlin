@@ -7,14 +7,17 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/image_fragment"
+        android:id="@+id/detail_fragment"
+        android:name="com.hackaprende.pokedexkotlin.DetailFragment"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"/>
 
     <fragment
-        android:layout_below="@id/image_fragment"
+        android:id="@+id/list_fragment"
+        android:name="com.hackaprende.pokedexkotlin.ListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/detail_fragment"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
