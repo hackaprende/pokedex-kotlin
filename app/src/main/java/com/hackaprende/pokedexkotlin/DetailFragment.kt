@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 
 class DetailFragment : Fragment() {
 
@@ -33,6 +34,9 @@ class DetailFragment : Fragment() {
     }
 
     fun setPokemonData(pokemon: Pokemon) {
+        Glide.with(this).load(pokemon.imageUrl).into(imageView)
+
+
         hpText.text = getString(R.string.hp_format, pokemon.hp)
         attackText.text = getString(R.string.attack_format, pokemon.attack)
         defenseText.text = getString(R.string.defense_format, pokemon.defense)
