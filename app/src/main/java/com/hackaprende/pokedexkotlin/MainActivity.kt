@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity(), ListFragment.PokemonSelectListener {
 
     override fun onPokemonSelected(pokemon: Pokemon) {
         findNavController(R.id.main_navigation_container)
-            .navigate(ListFragmentDirections.actionListFragmentToPokemonDetailFragment())
+            .navigate(ListFragmentDirections.actionListFragmentToPokemonDetailFragment(pokemon))
     }
 }
