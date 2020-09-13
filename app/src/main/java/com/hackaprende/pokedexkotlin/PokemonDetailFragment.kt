@@ -82,7 +82,7 @@ class PokemonDetailFragment : Fragment() {
         defenseText.text = getString(R.string.defense_format, pokemon.defense)
         speedText.text = getString(R.string.speed_format, pokemon.speed)
 
-        val mediaPLayer = MediaPlayer.create(requireActivity(), pokemon.soundId)
-        mediaPLayer.start()
+//        val mediaPLayer = MediaPlayer.create(requireActivity(), pokemon.soundId)
+//        mediaPLayer.start()
     }
 }
