@@ -3,8 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".DetailFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white"
+        android:minHeight="?attr/actionBarSize" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -91,14 +101,5 @@
 
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/fragment_detail_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textColor="@color/text_black"
-        android:textSize="24sp"
-        tools:text="Bulbasaur"/>
 
 </LinearLayout>
