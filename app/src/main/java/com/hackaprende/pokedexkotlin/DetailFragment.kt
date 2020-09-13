@@ -1,6 +1,7 @@
 package com.hackaprende.pokedexkotlin
 
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +44,7 @@ class DetailFragment : Fragment() {
 
     fun setPokemonData(pokemon: Pokemon) {
         loadingWheel.visibility = View.VISIBLE
-        Glide.with(this).load("Esto no es un pokemon").listener(object: RequestListener<Drawable> {
+        Glide.with(this).load(pokemon.imageUrl).listener(object: RequestListener<Drawable> {
             override fun onLoadFailed(
                 e: GlideException?,
                 model: Any?,
@@ -72,5 +73,8 @@ class DetailFragment : Fragment() {
         attackText.text = getString(R.string.attack_format, pokemon.attack)
         defenseText.text = getString(R.string.defense_format, pokemon.defense)
         speedText.text = getString(R.string.speed_format, pokemon.speed)
+
+        val mediaPLayer = MediaPlayer.create(requireActivity(), pokemon.soundId)
+        mediaPLayer.start()
     }
 }
